@@ -1,0 +1,38 @@
+# obri-deploy.yml
+
+name: dev-deploy
+
+on:
+  push:
+    branches: [dev]
+    
+permissions:
+  contents: read
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./backend
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3.13.0
+        with:
+          java-version: "17"
+          distribution: "temurin"
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+        shell: bash
+        working-directory: ${{env.working-directory}}
+
+      - name: Build with Gradle
+        run: ./gradlew bootjar
+        shell: bash
+        working-directory: ${{env.working-directory}}
+        
+# 나머지는 뒤에서 더 추가할 예정
