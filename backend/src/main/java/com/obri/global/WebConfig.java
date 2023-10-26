@@ -15,7 +15,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-            .allowedOrigins("http://localhost:3000") // 클라이언트 애플리케이션의 주소
+            .allowedOrigins("host.docker.internal:3000", "http://localhost:3000" , "*") // 클라이언트 애플리케이션의 주소
             .allowedMethods("*")
             .allowedHeaders("*")
             .allowCredentials(false)
