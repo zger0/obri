@@ -2,10 +2,13 @@ import { useState } from 'react'
 import Header from './layout/Header'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import './assets/fonts/pretendard.css'
+import './assets/css/reset.css'
 import './App.css'
 
 function App() {
-	const [count, setCount] = useState(0)
+	const [count, setCount] = useState(0);
+	const test = ['1', '2'];
 
 	return (
 		<>
@@ -24,7 +27,10 @@ function App() {
 					count is {count}
 				</button>
 				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
+					Edit <code>src/App.jsx</code> and save to test HMR<br></br>
+					Edit <code>src/App.jsx</code> and save to test HMR<br></br>
+					Edit <code>src/App.jsx</code> and save to test HMR<br></br>
+					Edit <code>src/App.jsx</code> and save to test HMR<br></br>
 				</p>
 			</div>
 			<p className="read-the-docs">
