@@ -1,6 +1,6 @@
 # obri
 
-백엔드 파일 실행
+백엔드 파일 실행.
 
 ```bash
 $ cd backend
